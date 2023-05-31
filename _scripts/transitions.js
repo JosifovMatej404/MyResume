@@ -1,27 +1,19 @@
-let i = 0;
-let speed = 100;
-let txt;
-let target;
 
-async function typeWriter(text, tr) {
-    if (i === 0){
-        txt = text;
-        target = tr;
-}
-    if (i < txt.length) {
-        if (txt.charAt(i) === '~') {
+async function typeWriter(text, tr, i, speed) {
+    if (i < text.length) {
+        if (text.charAt(i) === '~') {
             showButton();
             i = 0;
             return;
         }
-        if (txt.charAt(i) === '-') {
+        if (text.charAt(i) === '-') {
             await new Promise(resolve => setTimeout(resolve, 1000));
-            document.getElementById(target).innerHTML = " ";
+            document.getElementById(tr).innerHTML = " ";
             i++;
         }
-        document.getElementById(target).innerHTML += txt.charAt(i);
+        document.getElementById(tr).innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, speed);
+        setTimeout(function(){typeWriter(text,tr, i, speed)}, speed);
     }
 }
 

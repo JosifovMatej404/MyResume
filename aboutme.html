@@ -28,21 +28,18 @@
     </ul>
 </div>
 <div id="indexContent">
-    <div id="keysText" class="keysText"></div>
+    <div id="keysText" class="keysText">use arrow keys to move</div>
     <img class="keys" src="keys.png" alt="press left and right keys">
-    <div id="firstText" class = "text">I am a student studying in UKIM university,<br>
-        and a freelancer working as Game Developer and Web Designer</div>
-    <div id="secondText" class = "text">I am a student studying in UKIM university,<br>
-        and a freelancer working as Game Developer and Web Designer</div>
+    <div id="firstText" class = "text"></div>
+    <div id="secondText" class = "text"></div>
+    <div id="thirdText" class = "text"></div>
+    <div id="fourthText" class = "text"></div>
 </div>
 <img id="player" src="Square_-_black_simple.svg.png" alt="player">
 <div class="floor"></div>
 </body>
 <script>
-    let data = 'use arrow keys to move';
-    document.body.onload = function() {typeWriter(data, 'keysText'); playerFall(); movePlayer();}
-    if (position < -4) {
-        typeWriter('', 'firstText');
-    }
+    let data = 'I am a student from Macedonia studying in UKIM University and a freelancer working on UpWork as Game and Web Developer.';
+    document.body.onload = function() {typeWriter(data, 'firstText', 0, 30); playerFall(); movePlayer();}
 </script>
 </html>
