@@ -1,0 +1,15 @@
+
+.welcomeText{
+    font-size: 5em;
+    text-align: center;
+}
+
+body{
+    justify-items: center;
+}
+
+#indexContent {
+    text-align: center;
+    width: 100%;
+    right: 0;
+}

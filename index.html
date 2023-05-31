@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="_scripts/transitions.js"></script>
     <title>Welcome!</title>
 
 
 </head>
-<body onload="typeWriter()">
-<div id="indexContent">
-    <p id="text"></p>
-    <button id="aboutme" onclick="onButtonClick()">About me</button>
+<body>
+<div id="indexContent" class="content">
+    <p id="text" class="welcomeText"></p>
+    <button id="button" onclick="onButtonClick()" class="button" disabled>About me</button>
 </div>
-
 </body>
+<script>
+    let data = 'Hello World;-My name is Matej.-Welcome!~';
+    document.body.onload = function() {typeWriter(data, 'text');}
+</script>
 </html>

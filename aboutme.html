@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aboutme.css">
+    <link rel="stylesheet" href="css/navBar.css">
+    <script src="_scripts/transitions.js"></script>
+    <script src="_scripts/movement.js"></script>
+    <title>About Me</title>
+
+
+</head>
+<body>
+<div class="navBar">
+    <div class="logo">
+        <div class="finki">
+            <strong>About</strong>
+        </div>
+        <div class="page">
+            <strong>me</strong>
+        </div>
+    </div>
+    <ul class="menu">
+        <li class="active"><a href="#">INFO</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</div>
+<div id="indexContent">
+    <div id="keysText" class="keysText"></div>
+    <img class="keys" src="keys.png" alt="press left and right keys">
+    <div id="firstText" class = "text">I am a student studying in UKIM university,<br>
+        and a freelancer working as Game Developer and Web Designer</div>
+    <div id="secondText" class = "text">I am a student studying in UKIM university,<br>
+        and a freelancer working as Game Developer and Web Designer</div>
+</div>
+<img id="player" src="Square_-_black_simple.svg.png" alt="player">
+<div class="floor"></div>
+</body>
+<script>
+    let data = 'use arrow keys to move';
+    document.body.onload = function() {typeWriter(data, 'keysText'); playerFall(); movePlayer();}
+    if (position < -4) {
+        typeWriter('', 'firstText');
+    }
+</script>
+</html>

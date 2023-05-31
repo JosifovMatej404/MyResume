@@ -1,30 +1,40 @@
 let i = 0;
-let txt = 'Hello world;-My name is Matej.-Welcome!~';
 let speed = 100;
+let txt;
+let target;
 
-async function typeWriter() {
+async function typeWriter(text, tr) {
+    if (i === 0){
+        txt = text;
+        target = tr;
+}
     if (i < txt.length) {
         if (txt.charAt(i) === '~') {
             showButton();
-            i++;
+            i = 0;
+            return;
         }
         if (txt.charAt(i) === '-') {
             await new Promise(resolve => setTimeout(resolve, 1000));
-            document.getElementById("text").innerHTML = " ";
+            document.getElementById(target).innerHTML = " ";
             i++;
         }
-        document.getElementById("text").innerHTML += txt.charAt(i);
+        document.getElementById(target).innerHTML += txt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     }
 }
 
 function showButton(){
-    document.getElementById("aboutme").style.transition = "1s";
-    document.getElementById("aboutme").style.opacity = "100%";
+    document.getElementById("button").style.transition = "1s";
+    document.getElementById("button").style.opacity = "100%";
+    document.getElementById("button").disabled = false;
 }
 
-function onButtonClick(){
-    document.getElementById("indexContent").style.transition = "1s";
-    scrollTo(1000,10000);
+async function onButtonClick(){
+    let content =  document.getElementById("indexContent");
+    content.style.transition = "1s";
+    content.style.translate = "-100%";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.open("aboutme.html", "_self");
 }
